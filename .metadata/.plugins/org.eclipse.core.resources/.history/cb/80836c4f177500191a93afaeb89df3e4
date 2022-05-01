@@ -1,0 +1,86 @@
+
+public class woche3 {
+
+	public static void main(String[] args) {
+		System.out.println(istAnagramm("abc", "bac"));
+		System.out.println(istAnagramm("", ""));
+		System.out.println(istAnagramm("pennen", "neppen"));
+		
+		
+
+	}
+	
+	/*public String stringBauen(String x){
+	    if (x == "") return "";
+	    else if (x.indexOf('a') >= 0) return x.replaceAll("a", "");
+	    else return x;
+	}*/
+	
+	public boolean findeStringImString(String x, String suchen){
+	    if (x.toLowerCase().indexOf(suchen.toLowerCase()) >= 0) return true;
+	    else return false;
+	}
+
+	public String stringBauen(String x){
+	    if (x == "") return "";
+		else if (x.toLowerCase().indexOf('a') >= 0) {
+			String copyOfX = x;
+			for (int i = 1; i < x.length(); i++) {
+				if (x.toLowerCase().charAt(i) == 'a') copyOfX = x.replace("a","");
+			}
+			
+			return copyOfX;
+		}
+		else return x;
+	}
+	
+	public static boolean stringFinden(String x, String suchen){
+	    if (suchen == "") return true;
+	    else if (x == "") return false;
+	    else if (x.indexOf(suchen.charAt(0)) >= 0) {
+	    	String reconstructSuchen = "";
+	    	for (int i = 0; i < suchen.length(); i++) {
+	    		for (int j = 0; j < x.length(); j++) {
+	    			if (x.charAt(j) == suchen.charAt(i)) {
+	    				reconstructSuchen += x.charAt(j);
+	    				i++;
+	    			}
+	    		}
+	    	}
+	    	if (reconstructSuchen.equals(suchen)) return true;
+	    	else return false;
+	    } else return false;
+	}
+	
+	public String rausschneiden(String x, int m){
+	    String recontructed = "";
+	    
+	    for (int i = 0; i < x.length(); i++) {
+	        if (i % m == 0 || i == 0) recontructed += x.charAt(i);
+	    }
+	    
+	    return recontructed;
+	}
+	
+	public static boolean istAnagramm(String x, String y){
+	    String savedChars = "";
+	    
+	    if (x == "" && y == "") return true;
+	    else {
+	    	
+	    	for (int i = 0; i < y.length(); i++) {
+	    		for (int j = 0; j < x.length(); j++) {
+	    			if (x.charAt(j) == y.charAt(i)) {
+	    				savedChars += x.charAt(j);
+	    				i++;
+	    			}
+	    		}
+	    	}
+	    	if (savedChars.equals(y)) return true;
+	    	else return false;
+	    } 
+	}
+
+
+
+}

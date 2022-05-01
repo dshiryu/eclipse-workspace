@@ -1,0 +1,33 @@
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Dreieck abc = new Dreieck();
+		
+		abc.Dreieck(7, 100, 7);
+		abc.checkTriangle();
+		
+		abc.Dreieck(10 , 10, 10);
+		abc.checkTriangle();
+		
+		abc.Dreieck(10000000, 50000, 3000);
+		abc.checkTriangle();
+		
+		abc.Dreieck(3, 4, 5);
+		abc.checkTriangle();
+		
+		abc.Dreieck(-1, 5, 10);
+		abc.checkTriangle();
+		
+		
+		
+		Rechteck bla = new Rechteck();
+		bla.Rechteck(3, 4);
+		bla.umfang();
+		bla.flaeche();
+		
+		
+	}
+
+}

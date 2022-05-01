@@ -1,0 +1,4 @@
+#Fri Feb 15 01:11:20 EET 2019
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=Generate Javadoc

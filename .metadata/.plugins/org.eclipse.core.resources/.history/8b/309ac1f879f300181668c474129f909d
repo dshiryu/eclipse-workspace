@@ -1,0 +1,33 @@
+public class Rechteck {
+	private int laenge; // side
+	private int breite; // height
+	
+	public void rechteck (int x, int y) {
+		this.laenge = x;
+		this.breite = y;
+	} 
+	
+	// Perimeter
+	public int umfang () {
+		int sideSquared = laenge * laenge; 
+		int heightSquared = breite * breite;
+		double sumSquares = sideSquared + heightSquared;
+		double hypotenuse = Math.sqrt(sumSquares);
+		int lastSide = (int) hypotenuse;
+		int perimeter = laenge + breite + lastSide;
+		
+		
+		return perimeter;
+	}
+	
+	// area = (side * height) / 2
+	public int flaeche () {
+		int area = (laenge * breite) / 2;
+		return area;
+	}
+	
+	public static void istQuadrat () {
+		
+	} 
+
+}
